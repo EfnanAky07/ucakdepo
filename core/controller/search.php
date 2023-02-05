@@ -1,13 +1,13 @@
-
 <!DOCTYPE html>
 <html>
 <head>
  
-<link rel="stylesheet" href="css/style2.css">
+<link rel="stylesheet" href="../../css/style2.css">
 </head>
 <body>
+    <h1><a href= "../../index.php"> return home </a></h1>
 <h2>Receiving</h2>
-<form action="core/controller/search.php" method="GET">
+<form action=" " method="GET">
             
             <input required type="text" name="search" placeholder="words" >
             <input type="submit" name="searchform"  class="submit" value="search">
@@ -20,10 +20,21 @@
             <td>İncoming Date</td>
             <td>Supplier</td>
         </tr>
-        <?php $getdata=new Part(); $getdata->Getdata();?>
+
         
-    </table>
- 
+    
+<?php 
+require '../init.php';
+if (isset($_GET['searchform'])) {
+    @$word=trim(strip_tags($_GET['search']));
+   
+    $part= new Part();
+    $part->Search($word);
+    
+} else {
+    echo 'error';
+}
+?>
+</table>
 </body>
 </html>
-

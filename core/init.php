@@ -2,6 +2,7 @@
 session_start();
 require_once 'database/connection.php';
 require_once 'class/user.php'; 
+require_once 'class/part.php';
 function IsLogin(){
  if (!empty($_SESSION['username'])) {
    return true;  

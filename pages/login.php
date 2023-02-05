@@ -1,7 +1,7 @@
 <?php 
-include_once '../core/init.php';
+include_once 'core/init.php';
 if (IsLogin()) {
-   header('Location: ../index.php');
+   header('Location: index.php');
 
 }
 else {
